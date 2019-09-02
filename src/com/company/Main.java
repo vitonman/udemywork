@@ -35,11 +35,12 @@ public class Main {
         BankAccount bankAccount = new BankAccount();
         bankAccount.setAccountNumber(3325233);
         bankAccount.setBalance(555.33);
+        bankAccount.depositFunds(300);
         bankAccount.setCustomerName("Vitali");
         bankAccount.setEmail("vitalimaksimov@gmail.com");
         bankAccount.setPhone("+3725555555");
 
-        bankAccount.withdrawFunds(200.33);
+        bankAccount.withdrawFunds(600);
         System.out.println(bankAccount.getEmail());
 
     }
