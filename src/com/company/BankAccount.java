@@ -8,6 +8,12 @@ public class BankAccount {
     private String email;
     private String phone;
 
+    public BankAccount(){
+
+        System.out.println("Empty construction called");
+
+    }
+
     public int getAccountNumber() {
         return accountNumber;
     }
