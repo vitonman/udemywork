@@ -63,7 +63,7 @@ public class BankAccount {
 
         } else {
 
-            balance -= funds;
+            balance -= funds;//
             System.out.println("Now your balance is: " + getBalance());
 
         }
