@@ -19,7 +19,7 @@ public class Main {
 
 
 
-    SimpleCalculator calculator = new SimpleCalculator();
+  /*  SimpleCalculator calculator = new SimpleCalculator();
 
     calculator.setFirstNumber(5.0);
     calculator.setSecondNumber(4);
@@ -28,9 +28,19 @@ public class Main {
     calculator.setFirstNumber(5.25);
     calculator.setSecondNumber(0);
     System.out.println("multiply= " + calculator.getMultiplicationResult());
-        System.out.println("divide= " + calculator.getDivisionReslt());
+        System.out.println("divide= " + calculator.getDivisionResult());
+*/
 
 
+        BankAccount bankAccount = new BankAccount();
+        bankAccount.setAccountNumber(3325233);
+        bankAccount.setBalance(555.33);
+        bankAccount.setCustomerName("Vitali");
+        bankAccount.setEmail("vitalimaksimov@gmail.com");
+        bankAccount.setPhone("+3725555555");
+
+        bankAccount.withdrawFunds(200.33);
+        System.out.println(bankAccount.getEmail());
 
     }
 
