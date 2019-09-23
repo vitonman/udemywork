@@ -65,8 +65,6 @@ public class Person {
 
     public String getFullName(){
 
-
-
         if(getFirstName().isEmpty() && getLastName().isEmpty()){
 
             return "";
