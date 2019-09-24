@@ -1,4 +1,4 @@
-package com.company.other_challenges;
+package com.company.another_exic;
 
 public class SimpleCalculator{
 
