@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.Inherritance_challenge.Car;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 
 import java.util.Scanner;
@@ -10,6 +11,16 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
+        Car car = new Car("basic", 1, 1);
+
+        car.move();
+        car.brake();
+        car.move();
+        car.speedUp();
+        car.changeGear(3);
+        car.speedUp();
+
 
 /*
         Carpet carpet = new Carpet(3.5); //carpet cost.
@@ -24,7 +35,7 @@ public class Main {
 
  */
 
-
+/*
         ComplexNumber one = new ComplexNumber(1.0, 1.0);
         ComplexNumber number = new ComplexNumber(2.5, -1.5);
         one.add(1,1);
@@ -36,7 +47,7 @@ public class Main {
         number.subtract(one);
         System.out.println("number.real= " + number.getReal());
         System.out.println("number.imaginary= " + number.getImaginary());
-
+ */
 
 
 
