@@ -1,11 +1,11 @@
 package com.company.Cylinder;
 
-public class Cyrcle {
+public class Circle {
 
     private double radius;
 
 
-    public Cyrcle(double radius) {
+    public Circle(double radius) {
 
         if(radius < 0){
 
