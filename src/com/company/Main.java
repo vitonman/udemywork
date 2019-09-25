@@ -1,31 +1,22 @@
 package com.company;
 
-import com.company.Cylinder.Circle;
-import com.company.Cylinder.Cylinder;
-import com.company.Inherritance_challenge.Car;
-import com.company.Rectangle.Cuboid;
-import com.company.Rectangle.Rectangle;
-import com.company.composition.*;
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
-
-import java.util.Scanner;
-
-
+import com.company.house_challenge.Chair;
+import com.company.house_challenge.House;
+import com.company.house_challenge.Room;
+import com.company.house_challenge.Table;
 
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Dimensions dimensions = new Dimensions(20,20,5);
-        Case theCase = new Case("2209", "Sonic","240", dimensions);
-        Resolution resolution = new Resolution(800, 600);
-        Monitor monitor = new Monitor("2233", "Ultrapek", 24, resolution);
-        Motherboard motherboard = new Motherboard("23PZT", "Asus", 4, 2, "alCapone");
+        Chair chair = new Chair("MyChair", 20, 33.33);
+        Table table = new Table("default_table");
+        Room room = new Room(20,chair,table);
 
-        PC pc = new PC(theCase, monitor, motherboard);
+        House house = new House(room);
 
-        pc.getMonitor().drawPixelAt(2,5,"red");
+        house.useTable();
 
 
     }
