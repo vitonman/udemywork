@@ -27,4 +27,20 @@ public class Player {
 
     }
 
+
+
+/*
+ Player player = new Player();
+    player.health = 100;
+    player.name = "Vitali";
+    player.weapon = "Gun";
+
+    int damage = 8;
+        player.loseHealth(damage);
+
+        System.out.println("Remaining health:  " + player.healthRemaining());
+
+    damage = 11;
+*/
+
 }

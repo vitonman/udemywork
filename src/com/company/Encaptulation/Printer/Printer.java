@@ -2,14 +2,12 @@ package com.company.Encaptulation.Printer;
 
 public class Printer {
 
-    private int toner_level;
-    private int pages;
+    private double toner_level;
     private boolean duplex;
 
-    public Printer(int toner_level, int pages, boolean duplex) {
+    public Printer(int toner_level) {
         this.toner_level = toner_level;
-        this.pages = pages;
-        this.duplex = duplex;
+        this.duplex = false;
     }
 
     public void fillUpToner(int value){
@@ -27,7 +25,27 @@ public class Printer {
 
     }
 
-    public int getToner_level() {
+    public void printPages(double pages){
+
+        if(isDuplex()){
+            //if duplex = true.
+            this.toner_level = this.toner_level - (pages/2);
+
+            System.out.println("Printer  working on duplex mode.");
+            System.out.println("Printed " + (pages/2) + " pages. Toner level is : " + this.toner_level);
+
+        } else {
+            //if duplex = false.
+            this.toner_level = this.toner_level - pages;
+            System.out.println("Printer not working on duplex mode.");
+            System.out.println("Printed " + pages + " pages. Toner level is : " + this.toner_level);
+
+        }
+
+
+    }
+
+    public double getToner_level() {
         return toner_level;
     }
 
@@ -35,7 +53,18 @@ public class Printer {
         return duplex;
     }
 
-    public int getPages() {
-        return pages;
+    public void makeDuplex(){
+
+        if(this.duplex){
+
+            this.duplex = false;
+
+        } else {
+
+            this.duplex = true;
+
+        }
+
     }
+
 }

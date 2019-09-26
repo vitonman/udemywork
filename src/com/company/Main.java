@@ -1,10 +1,6 @@
 package com.company;
-
-import com.company.Encaptulation.Player;
-import com.company.house_challenge.Chair;
-import com.company.house_challenge.House;
-import com.company.house_challenge.Room;
-import com.company.house_challenge.Table;
+import com.company.oop_final_challenge.BaseBurger;
+import com.company.oop_final_challenge.HealthyBurger;
 
 
 public class Main {
@@ -12,18 +8,17 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Player player = new Player();
+        BaseBurger burger = new BaseBurger("white bread", "pork", 3);
+        burger.setAddition1("Tomato");
+        burger.setAddition2("Onion");
+        burger.getBurgerTotal();
 
-        player.health = 100;
-        player.name = "Vitali";
-        player.weapon = "Gun";
 
-        int damage = 8;
-        player.loseHealth(damage);
+        HealthyBurger healthyBurger = new HealthyBurger("Chicken", 3);
 
-        System.out.println("Remaining health:  " + player.healthRemaining());
+        healthyBurger.setAddition6("Onion");
+        healthyBurger.getBurgerTotal();
 
-        damage = 11;
 
 
     }
