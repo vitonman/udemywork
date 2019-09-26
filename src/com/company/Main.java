@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.Encaptulation.Player;
 import com.company.house_challenge.Chair;
 import com.company.house_challenge.House;
 import com.company.house_challenge.Room;
@@ -10,13 +11,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Chair chair = new Chair("MyChair", 20, 33.33);
-        Table table = new Table("default_table");
-        Room room = new Room(20,chair,table);
 
-        House house = new House(room);
+        Player player = new Player();
 
-        house.useTable();
+        player.health = 100;
+        player.name = "Vitali";
+        player.weapon = "Gun";
+
+        int damage = 8;
+        player.loseHealth(damage);
+
+        System.out.println("Remaining health:  " + player.healthRemaining());
+
+        damage = 11;
 
 
     }
