@@ -1,17 +1,24 @@
 package com.company;
 
 
+import com.company.GroceryArrayList.GroceryList;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ArrayChallenge arrayChallenge = new ArrayChallenge();
+        GroceryList groceryList = new GroceryList();
 
-        arrayChallenge.startProgram();
+        groceryList.addGroceryItem("Milk");
+        groceryList.addGroceryItem("Bread");
+        System.out.println(groceryList.getGroceryList());
 
+        groceryList.modifyGroceryItem("Milk", "Kefir");
 
+        System.out.println(groceryList.getGroceryList());
 
+        groceryList.printGroceryList();
+        groceryList.onFile("Milk");
 
     }
 }

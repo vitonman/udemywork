@@ -1,4 +1,4 @@
-package com.company;
+package com.company.ArrayChallenge;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -73,15 +73,27 @@ public class ArrayChallenge {
 
     public int[] sortIntegers(int[] array){
 
-        int[] newArray = new int[array.length];
+        int[] sortedArray = new int[array.length];
 
         for (int i = 0; i < array.length; i++) {
 
-            for (int j = 0; j < array.length; j++) {
+            sortedArray[i] = array[i];
 
-                if(array[i] > array[j]){
+        }
 
-                    newArray[i] = array[j];
+        boolean flag = true;
+        int temp;
+
+        while (flag){
+            flag = false;
+            for (int i = 0; i < sortedArray.length - 1; i++) {
+
+                if(sortedArray[i] < sortedArray[i+1]){
+
+                    temp = sortedArray[i];
+                    sortedArray[i] = sortedArray[i+1];
+                    sortedArray[i+1] = temp;
+                    flag = true;
 
                 }
 
@@ -90,7 +102,7 @@ public class ArrayChallenge {
         }
 
 
-        return newArray;
+        return sortedArray;
 
     }
 
