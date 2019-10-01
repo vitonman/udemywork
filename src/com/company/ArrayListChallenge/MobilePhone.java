@@ -19,31 +19,31 @@ public class MobilePhone {
 
     public void printContactList() {
         System.out.println("You have " + contactsList.size() + " items in your contact list");
-        for(int i=0; i< contactsList.size(); i++) {
-            contactsList.get(i).getContactInfo();
+        for(Contacts contact: contactsList){
+
+
+
         }
     }
 
-    private int findItem(Contacts searchItem) {
-        return contactsList.indexOf(searchItem);
-    }
+    public int findItem(String name) {
 
-    public boolean onFile(Contacts searchItem) {
-        int position = findItem(searchItem);
-        if(position >=0) {
-            return true;
+        for(Contacts contact: contactsList){
+
+            if(contact.getName().equals(name)){
+
+
+                //dorabotat
+                return contactsList.indexOf(name);
+
+            }
+
         }
 
-        return false;
     }
 
 
-/*    public void removeContact(Contacts item) {
-        int position = findItem(item);
-        if(position >= 0) {
-            removeContact(position);
-        }
-    }*/
+
 
 
 

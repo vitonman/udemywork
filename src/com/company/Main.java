@@ -1,24 +1,23 @@
 package com.company;
 
 
+import com.company.ArrayListChallenge.MobilePhone;
 import com.company.GroceryArrayList.GroceryList;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        GroceryList groceryList = new GroceryList();
 
-        groceryList.addGroceryItem("Milk");
-        groceryList.addGroceryItem("Bread");
-        System.out.println(groceryList.getGroceryList());
+        MobilePhone mobilePhone = new MobilePhone();
 
-        groceryList.modifyGroceryItem("Milk", "Kefir");
 
-        System.out.println(groceryList.getGroceryList());
+        mobilePhone.addContact("Vitali", 3222312);
+        mobilePhone.addContact("Sergei", 23231);
+        mobilePhone.printContactList();
 
-        groceryList.printGroceryList();
-        groceryList.onFile("Milk");
+
+
 
     }
 }
