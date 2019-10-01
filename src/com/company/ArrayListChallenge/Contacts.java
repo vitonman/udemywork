@@ -26,11 +26,7 @@ public class Contacts {
         this.number = number;
     }
 
-    public void getContactInfo(){
 
-        System.out.println(this.name + ": " + this.number);
-
-    }
 
 
 

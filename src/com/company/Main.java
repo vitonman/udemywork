@@ -16,7 +16,14 @@ public class Main {
         mobilePhone.addContact("Sergei", 23231);
         mobilePhone.printContactList();
 
+        mobilePhone.findItem("KEKE");
 
+        mobilePhone.removeContactItem("Vitali");
+
+        mobilePhone.printContactList();
+
+        mobilePhone.modifyContactItem("Sergei", "Peekar", 23232323);
+        mobilePhone.printContactList();
 
 
     }

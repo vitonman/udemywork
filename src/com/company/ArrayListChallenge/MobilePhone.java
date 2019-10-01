@@ -13,6 +13,8 @@ public class MobilePhone {
 
     }
 
+
+
     public ArrayList<Contacts> getContactsList() {
         return contactsList;
     }
@@ -21,7 +23,7 @@ public class MobilePhone {
         System.out.println("You have " + contactsList.size() + " items in your contact list");
         for(Contacts contact: contactsList){
 
-
+            System.out.println("Name: " + contact.getName() + "; Number: " + contact.getNumber());
 
         }
     }
@@ -29,17 +31,41 @@ public class MobilePhone {
     public int findItem(String name) {
 
         for(Contacts contact: contactsList){
-
             if(contact.getName().equals(name)){
-
-
-                //dorabotat
-                return contactsList.indexOf(name);
-
+                return contactsList.indexOf(contact);
             }
+        }
+        return -1;
 
+    }
+
+
+    public void removeContactItem(String item) {
+        int position = findItem(item);
+        if(position >= 0) {
+            removeContactItem(position);
+        }
+    }
+
+    private void removeContactItem(int position) {
+        contactsList.remove(position);
+    }
+
+    public void modifyContactItem(String currentName, String newItem, int number) {
+        int position = findItem(currentName);
+        if(position >= 0) {
+            modifyContactItem(position, newItem, number);
         }
 
+    }
+
+
+
+    private void modifyContactItem(int position, String newName, int newNumber) {
+        Contacts newContact = new Contacts(newName, newNumber);
+
+        contactsList.set(position, newContact);
+        System.out.println("Contact item " + (position+1) + " has been modified.");
     }
 
 
