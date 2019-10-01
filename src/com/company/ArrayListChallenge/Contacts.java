@@ -25,4 +25,10 @@ public class Contacts {
     public void setNumber(int number) {
         this.number = number;
     }
+
+    public void getContactInfo(){
+
+        System.out.println(this.name + ": " + this.number);
+
+    }
 }

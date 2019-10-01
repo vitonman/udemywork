@@ -20,9 +20,33 @@ public class MobilePhone {
     public void printContactList() {
         System.out.println("You have " + contactsList.size() + " items in your contact list");
         for(int i=0; i< contactsList.size(); i++) {
-            System.out.println((i+1) + ". " + contactsList.get(i));
+            contactsList.get(i).getContactInfo();
         }
     }
+
+    private int findItem(Contacts searchItem) {
+        return contactsList.indexOf(searchItem);
+    }
+
+    public boolean onFile(Contacts searchItem) {
+        int position = findItem(searchItem);
+        if(position >=0) {
+            return true;
+        }
+
+        return false;
+    }
+
+
+/*    public void removeContact(Contacts item) {
+        int position = findItem(item);
+        if(position >= 0) {
+            removeContact(position);
+        }
+    }*/
+
+
+
 
 
 }
