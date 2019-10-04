@@ -1,14 +1,16 @@
 package com.company.LinkedList;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.ListIterator;
-import java.util.Scanner;
+import java.util.*;
 
 public class MainForThis {
-/*
 
-    Album album = new Album("Stormbringer", "Deep Purple");
+
+    private static List<Album> albums = new ArrayList<Album>();
+
+    public static void main(String[] args) {
+
+
+        Album album = new Album("Stormbringer", "Deep Purple");
         album.addSong("Stormbringer", 4.6);
         album.addSong("Love don't mean a thing", 4.22);
         album.addSong("Holy man", 4.3);
@@ -20,7 +22,7 @@ public class MainForThis {
         album.addSong("Soldier of fortune", 3.13);
         albums.add(album);
 
-    album = new Album("For those about to rock", "AC/DC");
+        album = new Album("For those about to rock", "AC/DC");
         album.addSong("For those about to rock", 5.44);
         album.addSong("I put the finger on you", 3.25);
         album.addSong("Lets go", 3.45);
@@ -32,7 +34,7 @@ public class MainForThis {
         album.addSong("Night of the long knives", 5.12);
         albums.add(album);
 
-    LinkedList<Song> playList = new LinkedList<Song>();
+        List<Song> playList = new ArrayList<Song>();
         albums.get(0).addToPlayList("You can't do it right", playList);
         albums.get(0).addToPlayList("Holy man", playList);
         albums.get(0).addToPlayList("Speed king", playList);  // Does not exist
@@ -42,15 +44,18 @@ public class MainForThis {
         albums.get(1).addToPlayList(2, playList);
         albums.get(1).addToPlayList(24, playList);  // There is no track 24
 
-    play(playList);
-
-*/
+        play(playList);
 
 
 
 
 
-    private static void play(LinkedList<Song> playList) {
+
+
+    }
+
+
+    private static void play(List< Song > playList) {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         boolean forward = true;
@@ -153,7 +158,7 @@ public class MainForThis {
     }
 
 
-    private static void printList(LinkedList<Song> playList) {
+    private static void printList(List<Song> playList) {
         Iterator<Song> iterator = playList.iterator();
         System.out.println("================================");
         while(iterator.hasNext()) {
@@ -161,7 +166,6 @@ public class MainForThis {
         }
         System.out.println("================================");
     }
-
 
 
 }
