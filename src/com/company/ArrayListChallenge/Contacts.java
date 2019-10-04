@@ -10,6 +10,8 @@ public class Contacts {
         this.number = number;
     }
 
+
+
     public String getName() {
         return name;
     }
