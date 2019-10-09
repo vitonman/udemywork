@@ -10,15 +10,17 @@ public class InterfaceMain {
 
         //here code.
         Monster monster = new Monster("Galaxtus", 30000, 40000);
+        System.out.println(monster.toString());
+        saveObject(monster);
 
-        Monster monster2 = new Monster("Galaxtus", 30000, 40000);
+        monster.setHealth(200);
+        System.out.println(monster);
 
         saveObject(monster);
 
-        readValues();
+        loadObject(monster);
 
-
-
+        System.out.println(monster);
 
 
     }
