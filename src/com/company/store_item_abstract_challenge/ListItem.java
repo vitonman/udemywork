@@ -5,46 +5,28 @@ import java.util.List;
 
 public abstract class ListItem {
 
-    private ListItem left;
-    private ListItem right;
+    protected ListItem leftLink = null;
+    protected ListItem rightLink = null;
 
-    public ListItem(ListItem left, ListItem right) {
-        this.left = left;
-        this.right = right;
+    protected Object value;
+
+    public ListItem(Object value){
+        this.value = value;
     }
 
-    public ListItem getLeft() {
-        return left;
+    abstract ListItem next();
+    abstract ListItem setNext(ListItem item);
+    abstract ListItem previous();
+    abstract ListItem setPrevious(ListItem item);
+
+    abstract int compareTo(ListItem item);
+
+    public Object getValue(){
+        return value;
     }
 
-    public void setLeft(ListItem left) {
-        this.left = left;
-    }
-
-    public ListItem getRight() {
-        return right;
-    }
-
-    public void setRight(ListItem right) {
-        this.right = right;
-    }
-
-    public void moveToLeft(ListItem value){
-
-        setLeft(value);
-
-    }
-    public void moveToRight(ListItem value){
-
-        setRight(value);
-
-    }
-
-
-    public int compareTo(ListItem value){
-
-        return 0;
-
+    public void setValue(Object value){
+        this.value = value;
     }
 
 }
