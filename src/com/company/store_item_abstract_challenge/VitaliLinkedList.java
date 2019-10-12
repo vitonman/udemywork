@@ -45,11 +45,14 @@ public class VitaliLinkedList implements NodeList {
 
                 if(currentItem.next() != null) {
 
+                    // nextLink is NOT empty, we return a reference of this object
+                    // to currentItem.
+
                     currentItem = currentItem.next();
 
                 } else {
 
-                    //no next there, insert at end of list
+                    //If there is no object we set
                     currentItem.setNext(newItem);
                     newItem.setPrevious(currentItem);
                     return true;
