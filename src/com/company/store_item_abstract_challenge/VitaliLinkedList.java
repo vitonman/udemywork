@@ -29,8 +29,6 @@ public class VitaliLinkedList implements NodeList {
 
         ListItem currentItem = this.root;
         //here we take an element of this.root.
-
-
         //while currentItem is NOT null cycle
         while(currentItem != null){
             //check if element is not null
@@ -38,31 +36,19 @@ public class VitaliLinkedList implements NodeList {
             int comparison = (currentItem.compareTo(newItem));
             //compare element and check if string is different.
 
-
             if(comparison <0){
-                //if number of string char is less than 0
-                //then there is some difference and object must be put
-                //in nextLink.
+                //newItem is greater, move right if possible.
 
                 if(currentItem.next() != null) {
-
                     // nextLink is NOT empty, we return a reference of this object
-                    // to currentItem.
-
+                    // to currentItem. and this becomes to point to go next
                     currentItem = currentItem.next();
-
                 } else {
-
                     //if nextLink is EMPTY
-
-
                     //we put setNext to currentItem object a reference of new Item.
                     currentItem.setNext(newItem);
-
-                    //here we set
+                    //here we set to newItem a reference of currentItem.
                     newItem.setPrevious(currentItem);
-
-
                     return true;
 
                 }
@@ -77,7 +63,21 @@ public class VitaliLinkedList implements NodeList {
                     newItem.setNext(currentItem);
                     currentItem.setPrevious(newItem);
 
+                } else {
+
+                    // the node with a previous is the root
+                    newItem.setNext(this.root);
+                    this.root.setPrevious(newItem);
+                    this.root = newItem;
+
                 }
+
+                return true;
+
+            } else {
+
+                //equal
+                System.out.println(newItem.getValue() + " is already present.");
 
             }
 
