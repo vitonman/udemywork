@@ -19,9 +19,7 @@ public class VitaliLinkedList implements NodeList {
     @Override
     public boolean addItem(ListItem newItem) {
         if(this.root == null){
-
             //if root is empty, add a new element there.
-
             this.root = newItem;
             return true;
 
@@ -33,15 +31,18 @@ public class VitaliLinkedList implements NodeList {
         //here we take an element of this.root.
 
 
+        //while currentItem is NOT null cycle
         while(currentItem != null){
             //check if element is not null
 
-            //compare
             int comparison = (currentItem.compareTo(newItem));
             //compare element and check if string is different.
 
+
             if(comparison <0){
-                //if number of string char is less than 0.
+                //if number of string char is less than 0
+                //then there is some difference and object must be put
+                //in nextLink.
 
                 if(currentItem.next() != null) {
 
@@ -52,9 +53,16 @@ public class VitaliLinkedList implements NodeList {
 
                 } else {
 
-                    //If there is no object we set
+                    //if nextLink is EMPTY
+
+
+                    //we put setNext to currentItem object a reference of new Item.
                     currentItem.setNext(newItem);
+
+                    //here we set
                     newItem.setPrevious(currentItem);
+
+
                     return true;
 
                 }

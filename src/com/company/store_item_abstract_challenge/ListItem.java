@@ -1,7 +1,6 @@
 package com.company.store_item_abstract_challenge;
 
-import java.util.LinkedList;
-import java.util.List;
+
 
 public abstract class ListItem {
 
