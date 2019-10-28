@@ -9,7 +9,7 @@ public class Main {
         SearchTree list = new SearchTree(null);
 
         list.traverse(list.getRoot());
-
+//
         String stringData = "Darwin Brisbane Perth Melbourne Canberra Sydney Canberra";
 
         String[] data = stringData.split(" ");
