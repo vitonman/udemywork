@@ -6,7 +6,6 @@ public class VitaliLinkedList implements NodeList {
     private ListItem root = null;
 
     public VitaliLinkedList(ListItem root) {
-
         //soedenjajem this.root s interface.
         this.root = root;
     }
