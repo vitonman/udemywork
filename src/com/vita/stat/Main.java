@@ -16,5 +16,5 @@ public class Main {
         return number * multiply;
         //answer: the multiply must will be static
     }
-
+//
 }
