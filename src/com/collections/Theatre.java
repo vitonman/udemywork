@@ -24,20 +24,24 @@ public class Theatre {
     }
 
     public boolean reserveSeat(String seatNumber){
-        Seat requestedSeat = new Seat(seatNumber);
-        int foundSeat = Collections.binarySearch(seats, requestedSeat, null);
+       int low = 0;
+       int high = seats.size()-1;
 
-        for (Seat seat: seats){
-            System.out.println(".");
-            if(seat.getSeatNumber().equals(seatNumber)){
-                requestedSeat = seat;
-                break;
-            }
-        }
-        if(requestedSeat == null){
-            System.out.println("There is no seat " + seatNumber);
-        }
-        return requestedSeat.reserve();
+       while(low<=high){
+           int mid = (low + high) / 2;
+           Seat midVal = seats.get(mid);
+           int cmp = midVal.getSeatNumber().compareTo(seatNumber);
+
+           if(cmp < 0) {
+               low = mid + 1;
+           }else if(cmp > 0){
+               high = mid -1;
+           }else{
+               return seats.get(mid).reserve();
+           }
+       }
+       System.out.println("There is no seat " + seatNumber);
+       return false;
     }
 
     public void getSeats(){
