@@ -14,7 +14,7 @@ public class Main {
             System.out.println("Sorry, seat is taken.");
         }
 
-        int number = 'A';
+        int number = 'A';//
 
         System.out.println(number);
 
