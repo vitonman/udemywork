@@ -1,17 +1,19 @@
 package com.collections;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Theatre {
     private final String theatreName;
-    private List<Seat> seats = new ArrayList<>();
+    private List<Seat> seats = new LinkedList<>();
 
     public Theatre(String theatreName, int numRow, int seatsPerRow) {
         this.theatreName = theatreName;
 
-        int lastRow = 'A' + (numRow-1);
-        for(char row = 'A'; row <= lastRow; row++){
+
+        int lastRow = 'A' + (numRow-1); //65 + (8-1)
+        for(char row = 'A'; row <= lastRow; row++){ // while row <= lastrow, lastrow = 72.
             for(int seatNum = 1; seatNum <= seatsPerRow; seatNum++){
                 Seat seat = new Seat(row + String.format("%02d", seatNum));
                 seats.add(seat);
