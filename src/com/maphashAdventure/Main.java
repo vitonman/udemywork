@@ -13,28 +13,33 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        locations.put(0, new Location(0, "You are sitting in front of a computer learning Java"));
-        locations.put(1, new Location(1, "You are sranding at the end of a road before a small brick building"));
-        locations.put(2, new Location(2, "You are at the top of a hill"));
-        locations.put(3, new Location(3, "You are inside a building, a well house for a small spring"));
-        locations.put(4, new Location(4, "You are in a valley beside a stream"));
-        locations.put(5, new Location(5, "You are in the forest"));
+        Map<String, Integer> tempExit = new HashMap<String, Integer>();
+        locations.put(0, new Location(0, "You are sitting in front of a computer learning Java",tempExit));
 
-        locations.get(1).addExit("West", 2);
-        locations.get(1).addExit("East", 3);
-        locations.get(1).addExit("South", 4);
-        locations.get(1).addExit("North", 5);
+        tempExit = new HashMap<String, Integer>();
+        tempExit.put("West", 2);
+        tempExit.put("East", 3);
+        tempExit.put("South", 4);
+        tempExit.put("North", 5);
+        locations.put(1, new Location(1, "You are sranding at the end of a road before a small brick building",tempExit));
 
-        locations.get(2).addExit("North", 5);
+        tempExit = new HashMap<String, Integer>();
+        tempExit.put("North", 5);
+        locations.put(2, new Location(2, "You are at the top of a hill",tempExit));
 
-        locations.get(3).addExit("West", 1);
+        tempExit = new HashMap<String, Integer>();
+        tempExit.put("West", 1);
+        locations.put(3, new Location(3, "You are inside a building, a well house for a small spring",tempExit));
 
-        locations.get(4).addExit("North", 1);
-        locations.get(4).addExit("West", 2);
+        tempExit = new HashMap<String, Integer>();
+        tempExit.put("North", 1);
+        tempExit.put("West", 2);
+        locations.put(4, new Location(4, "You are in a valley beside a stream",tempExit));
 
-        locations.get(5).addExit("South", 1);
-        locations.get(5).addExit("West", 2);
-
+        tempExit = new HashMap<String, Integer>();
+        tempExit.put("South", 1);
+        tempExit.put("West", 2);
+        locations.put(5, new Location(5, "You are in the forest",tempExit));
 
         //VOCABULARY
         Map<String, String> vocabulary = new HashMap<>();
@@ -45,7 +50,7 @@ public class Main {
         vocabulary.put("NORTH", "N");
 
 
-        int loc = 1;
+     /*   int loc = 1;
         while (true){
             String[] directionExits;
             System.out.println(locations.get(loc).getDescription());
@@ -66,9 +71,7 @@ public class Main {
                     System.out.print(exit + ", ");
                 }
             }
-
             String [] directions = scanner.nextLine().split(" ");
-
             for (String direction: directions){
                 //go to west
                 if(vocabulary.containsValue(direction.toUpperCase()) || vocabulary.keySet().contains(direction.toUpperCase())){
@@ -83,17 +86,42 @@ public class Main {
 
 
             }
-       /* String[] road = "You are standing at the end of a road before a small building".split(" ");
-        for (String i : road){
-            System.out.println(i);
-        }*/
 
+    }*/
 
-       /* String[] building = " You are inside a building, a well house for a small spring".split(", ");
-        for(String i:building){
-            System.out.println(i);
-        }*/
-    }
+        int loc = 1;
+        while(true) {
+            System.out.println(locations.get(loc).getDescription());
+            if(loc == 0) {
+                break;
+            }
+
+            Map<String, Integer> exits = locations.get(loc).getExits();
+            System.out.print("Available exits are ");
+            for(String exit: exits.keySet()) {
+                System.out.print(exit + ", ");
+            }
+            System.out.println();
+
+            String direction = scanner.nextLine().toUpperCase();
+            if(direction.length() > 1) {
+                String[] words = direction.split(" ");
+                for(String word: words) {
+                    if(vocabulary.containsKey(word)) {
+                        direction = vocabulary.get(word);
+                        break;
+                    }
+                }
+            }
+
+            if(exits.containsKey(direction)) {
+                loc = exits.get(direction);
+
+            } else {
+                System.out.println("You cannot go in that direction");
+            }
+        }
+
 
     }
 }
