@@ -50,7 +50,7 @@ public class Main {
         vocabulary.put("NORTH", "N");
 
 
-     /*   int loc = 1;
+        int loc = 1;
         while (true){
             String[] directionExits;
             System.out.println(locations.get(loc).getDescription());
@@ -87,9 +87,9 @@ public class Main {
 
             }
 
-    }*/
+    }
 
-        int loc = 1;
+        /*int loc = 1;
         while(true) {
             System.out.println(locations.get(loc).getDescription());
             if(loc == 0) {
@@ -120,7 +120,7 @@ public class Main {
             } else {
                 System.out.println("You cannot go in that direction");
             }
-        }
+        }*/
 
 
     }
