@@ -70,7 +70,7 @@ public class Main {
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
 
-        temp = new HeavenlyBody("JupiPlutoter", 248);
+        temp = new HeavenlyBody("Pluto", 248);
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
 
@@ -103,6 +103,16 @@ public class Main {
             System.out.println("\t" + moon.getName());
         }
 
+        HeavenlyBody pluto = new HeavenlyBody("Pluto", 842);
+        planets.add(pluto);
+
+        for (HeavenlyBody planet: planets){
+            System.out.println(planet.getName() + ": " + planet.getOrbintalPeriod());
+        }
+
+        Object o = new Object();
+        o.equals(o);
+        "pluto".equals("");
     }
 
 }
