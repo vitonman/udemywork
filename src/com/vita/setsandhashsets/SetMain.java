@@ -46,7 +46,7 @@ public class SetMain {
         divine.addAll(Arrays.asList(divineWords));
 
         System.out.println();
-
+//
 
     }
 
