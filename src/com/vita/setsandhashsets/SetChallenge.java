@@ -13,7 +13,7 @@ public class SetChallenge {
 
     public static void main(String[] args) {
 
-
+/*
         HeavenlyBody temp = new HeavenlyBody("Earth","Exoplanet", 365);
         solarSystem.put(temp.getName(), temp);
         planetType.add(temp.getBodyType());
@@ -40,7 +40,7 @@ public class SetChallenge {
 
         for (HeavenlyBody planet : planets){
             System.out.println(planet);
-        }
+        }*/
 
 
      /*   System.out.println("========================");
@@ -53,7 +53,7 @@ public class SetChallenge {
 
 
 
-    private static void printSet(Set<HeavenlyBody> set){
+    /*private static void printSet(Set<HeavenlyBody> set){
         System.out.println("\t");
 
         HeavenlyBody curr = null;
@@ -70,5 +70,5 @@ public class SetChallenge {
 
         }
         System.out.println();
-    }
+    }*/
 }
