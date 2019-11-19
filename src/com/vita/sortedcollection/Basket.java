@@ -17,8 +17,11 @@ public class Basket {
         if((item != null) && (quantity > 0)){
             int inBasket = list.getOrDefault(item,0);
             list.put(item, inBasket + quantity);
+
+            System.out.println(item.getName() + " added to your basket: " + quantity + "tk.");
             return inBasket;
         }
+        System.out.println("No this item in STOCK");
         return 0;
     }
 

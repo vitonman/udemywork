@@ -29,10 +29,24 @@ public class StockList{
         StockItem inStock = list.getOrDefault(item, null);
 
         if((inStock != null) && (inStock.quantityInStock() >= quantity) && (quantity > 0)){
+
+
             inStock.adjustStock(-quantity);
             return quantity;
         }
         return 0;
+    }
+
+    public int reserveStock(String item, int quantity){
+        StockItem inStock = list.getOrDefault(item, null);
+
+        if((inStock != null) && (inStock.quantityInStock() >= quantity) && (quantity > 0)){
+
+            inStock.adjustReserved(+quantity);
+            return quantity;
+        }
+        return 0;
+
     }
 
     public StockItem get(String key){
@@ -65,6 +79,6 @@ public class StockList{
             totalCost += itemValue;
 
         }
-        return s + "Total stock value " + totalCost;
+        return s + "Total stock value " + String.format("%.2f", totalCost);
     }
 }
