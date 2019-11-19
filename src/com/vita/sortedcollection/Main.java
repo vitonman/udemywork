@@ -1,5 +1,7 @@
 package com.vita.sortedcollection;
 
+import java.util.Map;
+
 public class Main {
     private static StockList stockList = new StockList();
 
@@ -50,7 +52,10 @@ public class Main {
         sellItem(vitabasket, "car", 1);
         System.out.println(vitabasket);
 
-        sellItem(vitabasket, "car", 1);
+        if(sellItem(vitabasket, "car", 1) != 1){
+            System.out.println("There are no more cars in stock.");
+        }
+
         sellItem(vitabasket, "spinner", 6);
         System.out.println(vitabasket);
 
@@ -60,6 +65,16 @@ public class Main {
         System.out.println(vitabasket);
 
         System.out.println(stockList);
+
+ /*       temp = new StockItem("pen", 1.12);
+        stockList.Items().put(temp.getName(), temp);*/
+
+        stockList.Items().get("car").adjustStock(2000);
+        System.out.println(stockList);
+
+        for(Map.Entry<String, Double> price: stockList.PriceList().entrySet()){
+            System.out.println(price.getKey() + " cost " + price.getValue());
+        }
     }
 
     public static int sellItem(Basket basket, String item, int quantity){
