@@ -48,7 +48,7 @@ public class Main {
             System.out.println(s);
         }
 
-        Basket timsBasket = new Basket("Tim");
+        Basket vitabasket = new Basket("Tim");
         sellItem(timsBasket, "car", 1);
         System.out.println(timsBasket);
 
