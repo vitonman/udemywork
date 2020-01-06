@@ -48,24 +48,24 @@ public class Main {
             System.out.println(s);
         }
 
-        Basket vitabasket = new Basket("Tim");
-        sellItem(timsBasket, "car", 1);
-        System.out.println(timsBasket);
+        Basket vitabasket = new Basket("Vita");
+        sellItem(vitabasket, "car", 1);
+        System.out.println(vitabasket);
 
-        sellItem(timsBasket, "car", 1);
-        System.out.println(timsBasket);
+        sellItem(vitabasket, "car", 1);
+        System.out.println(vitabasket);
 
-        if(sellItem(timsBasket, "car", 1) != 1) {
+        if(sellItem(vitabasket, "car", 1) != 1) {
             System.out.println("There are no more cars in stock");
         }
 
-        sellItem(timsBasket, "spanner", 5);
-        System.out.println(timsBasket);
+        sellItem(vitabasket, "spanner", 5);
+        System.out.println(vitabasket);
 
-        sellItem(timsBasket, "juice", 4);
-        sellItem(timsBasket, "cup", 12);
-        sellItem(timsBasket, "bread", 1);
-        System.out.println(timsBasket);
+        sellItem(vitabasket, "juice", 4);
+        sellItem(vitabasket, "cup", 12);
+        sellItem(vitabasket, "bread", 1);
+        System.out.println(vitabasket);
 
         System.out.println(stockList);
 
